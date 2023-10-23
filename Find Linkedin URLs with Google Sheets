@@ -1,6 +1,6 @@
 
     /**
- * Find a Linkedin profile from company name and job title
+ * Find a LinkedIn profile with the company name and job title
  *
  * @param {string} companyName company where your prospect is working
  * @param {string} jobTitle job you are targeting
@@ -30,12 +30,12 @@ var options = {
 };
 response = UrlFetchApp.fetch("https://www.googleapis.com/customsearch/v1?key="+key+"&q="+search+"&cx="+searchEngineId, options);
 
-// Parse linkedin URL and Name
+// Parse LinkedIn URL and Name
 let url = JSON.parse(response).items[0].formattedUrl
 let title = JSON.parse(response).items[0].title.split("-")[0]
 
 
-// display the results in 2 columns
+//Display the results in 2 columns
 var results = new Array(1);
 let info = new Array(2);
 info[0]=url
